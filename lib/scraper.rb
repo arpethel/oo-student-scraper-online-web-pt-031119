@@ -56,9 +56,9 @@ class Scraper
           end
         end
       end
-
+      profile_hash
     end
-    profile_hash
+    # profile_hash
   # end
 
 end
