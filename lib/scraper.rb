@@ -2,9 +2,8 @@ require 'open-uri'
 require 'pry'
 
 class Scraper
-  # attr_accessor :twitter, :linkedin, :github, :blog, :quote, :bio
+
   def self.scrape_index_page(index_url)
-    # binding.pry
     doc = Nokogiri::HTML(open(index_url))
     students = []
     student_card = doc.css(".student-card")
