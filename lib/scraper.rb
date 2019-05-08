@@ -23,7 +23,8 @@ class Scraper
     doc = Nokogiri::HTML(open(profile_url))
     student_doc = doc.css(".main-wrapper")
     # binding.pry
-    student_doc.each do |student|
+    # student_doc.each do |student|
+    student = student_doc[0]
       profile_hash = {}
       binding.pry
       student.css("a").each do |hash|
@@ -43,7 +44,7 @@ class Scraper
       student.css("div").each do |hash|
         hash.each do |k, v|
           if v == "profile-quote"
-            @profile_hash[:profile_quote] = hash.text
+            profile_hash[:profile_quote] = hash.text
           end
         end
       end
@@ -51,13 +52,13 @@ class Scraper
       student.css("div").each do |hash|
         hash.each do |k, v|
           if v.include?("bio-content")
-            @profile_hash[:bio] = hash.css("p").text.strip
+            profile_hash[:bio] = hash.css("p").text.strip
           end
         end
       end
 
     end
-    @profile_hash
-  end
+    profile_hash
+  # end
 
 end
