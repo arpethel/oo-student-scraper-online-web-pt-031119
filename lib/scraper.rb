@@ -26,7 +26,7 @@ class Scraper
     # student_doc.each do |student|
     student = student_doc[0]
       profile_hash = {}
-      binding.pry
+      # binding.pry
       student.css("a").each do |hash|
         hash.each do |k, v|
           if k == "href" && v.include?("twitter")
