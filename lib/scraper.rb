@@ -22,10 +22,10 @@ class Scraper
   def self.scrape_profile_page(profile_url)
     doc = Nokogiri::HTML(open(profile_url))
     student_doc = doc.css(".main-wrapper")
-    binding.pry
+    # binding.pry
     student_doc.each do |student|
       profile_hash = {}
-
+      binding.pry
       student.css("a").each do |hash|
         hash.each do |k, v|
           if k == "href" && v.include?("twitter")
