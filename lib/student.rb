@@ -14,7 +14,8 @@ class Student
   def self.create_from_collection(students_array)
     # binding.pry
     students_array.each do |student_hash|
-      binding.pry
+      # binding.pry
+      self.new(student_hash)
       # Scraper.scrape_index_page(student_hash)
     end
     # binding.pry
